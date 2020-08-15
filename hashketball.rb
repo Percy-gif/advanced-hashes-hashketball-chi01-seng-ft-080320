@@ -1,4 +1,3 @@
-# Write your code below game_hash
 def game_hash
   {
     home: {
@@ -125,5 +124,34 @@ def game_hash
     }
   }
 end
+####hashketball #num_points_scored knows the number of points scored by each player
 
-# Write code here
+def num_points_scored(player_name)
+ 
+  all_players_nested = []
+  game_hash.each do |location, team_hash|
+    all_players_nested << team_hash[:players]
+   end 
+
+  all_players = all_players_nested.flatten
+
+  #iterate through all the players 
+
+  found_player = nil
+  all_players.each do |player_hash|
+    
+
+    if player_hash[:name] == player_name
+      found_player = player_hash
+    end
+  end
+
+
+  found_player[:points]
+end 
+  
+
+#num_points_scored("Jeff Adrien")
+
+
+ 
